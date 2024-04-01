@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\RedirectIfAdmin;
 use App\Http\Middleware\RedirectIfEmployee;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -70,6 +71,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
 
         'employee' => RedirectIfEmployee::class,
+        'admin'=> RedirectIfAdmin::class
     ];
     
 }

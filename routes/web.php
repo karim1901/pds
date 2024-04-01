@@ -38,10 +38,10 @@ Route::resource('dashbord' , DashbordController::class )->middleware('auth');
 Route::resource('order' , OrderController::class )->middleware('auth');
 Route::resource('OrderTem' , OrderTemController::class )->middleware('auth');
 Route::resource('vente' , VenteController::class )->middleware('auth');
-Route::resource('product' , ProductController::class )->middleware('auth')->middleware('employee');
+Route::resource('product' , ProductController::class )->middleware('admin');
 Route::resource('client' , ClientController::class )->middleware('auth');
 Route::resource('fournisseur' , FournisseurController::class )->middleware('auth');
-Route::resource('employee' , EmployeeController::class )->middleware('auth')->middleware('employee');
+Route::resource('employee' , EmployeeController::class )->middleware('admin');
 Route::resource('depot' , DepotController::class )->middleware('auth');
 Route::get('facture/{id}' , [FactureController::class,'showFacture'] )->name('facture')->middleware('auth');
 
